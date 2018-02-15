@@ -1,0 +1,10 @@
+body {
+  background-color: #ffc100;
+  padding: 20px;
+  margin: 0;
+}
+
+.currency-details-margins {
+  margin-top: 30px;
+  margin-left: 10px;
+}

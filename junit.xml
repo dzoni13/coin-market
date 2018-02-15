@@ -1,0 +1,29 @@
+<testsuites name="jest tests" tests="6" failures="1" time="0.46099999999999997">
+  <testsuite name="App" errors="0" failures="1" skipped="0" timestamp="2018-02-15T18:35:02" time="0.158" tests="3">
+    <testcase classname="App renders correctly" name="App renders correctly" time="0.005">
+    </testcase>
+    <testcase classname="App renders the Header component" name="App renders the Header component" time="0.001">
+    </testcase>
+    <testcase classname="App invalid path should redirect to 404" name="App invalid path should redirect to 404" time="0.001">
+      <failure>Error: It looks like you called `mount()` without a global document being loaded.
+    at new ReactWrapper (/Users/marina/Documents/react-node/coin-market/coin-market/node_modules/enzyme/build/ReactWrapper.js:90:13)
+    at mount (/Users/marina/Documents/react-node/coin-market/coin-market/node_modules/enzyme/build/mount.js:19:10)
+    at Object.it (/Users/marina/Documents/react-node/coin-market/coin-market/src/components/App.test.js:22:39)
+    at Object.asyncFn (/Users/marina/Documents/react-node/coin-market/coin-market/node_modules/jest-jasmine2/build/jasmine-async.js:68:30)
+    at resolve (/Users/marina/Documents/react-node/coin-market/coin-market/node_modules/jest-jasmine2/build/queueRunner.js:38:12)
+    at mapper (/Users/marina/Documents/react-node/coin-market/coin-market/node_modules/jest-jasmine2/build/queueRunner.js:31:21)
+    at Promise.resolve.then.el (/Users/marina/Documents/react-node/coin-market/coin-market/node_modules/p-map/index.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:103:7)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Dashboard" errors="0" failures="0" skipped="0" timestamp="2018-02-15T18:35:02" time="0.155" tests="2">
+    <testcase classname="Dashboard renders correctly" name="Dashboard renders correctly" time="0.002">
+    </testcase>
+    <testcase classname="Dashboard exist a Dashboard component" name="Dashboard exist a Dashboard component" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Header" errors="0" failures="0" skipped="0" timestamp="2018-02-15T18:35:02" time="0.148" tests="1">
+    <testcase classname="Header renders correctly" name="Header renders correctly" time="0.007">
+    </testcase>
+  </testsuite>
+</testsuites>
