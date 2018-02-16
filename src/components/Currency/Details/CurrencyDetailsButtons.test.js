@@ -37,10 +37,6 @@ const setup = () => {
 describe('CurrencyDetailsButtons', () => {
   const { props, currencyDetailsButtons, currencyTableRow } = setup();
 
-  it('renders correctly', () => {
-    expect(currencyDetailsButtons).toMatchSnapshot();
-  });
-
   it('the item should be refresh when click button', () => {
     currencyDetailsButtons.find('.refresh').simulate('click');
     expect(props.getCurrencyDetails).toBeCalled();

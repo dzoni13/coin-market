@@ -33,10 +33,6 @@ const setup = () => {
 describe('CurrencyDetails', () => {
   const { props, currencyDetails } = setup();
 
-  it('renders correctly', () => {
-    expect(currencyDetails).toMatchSnapshot();
-  });
-
   it('number of fields in details', () => {
     expect(currencyDetails.find('span').length).toBe(12);
   });
