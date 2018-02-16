@@ -8,7 +8,7 @@ class CurrencyTableRow extends Component {
     const path = `/currency/${currency.id}/?convert=${currency.fiatCurrency}`;
 
     return (
-      <tr>
+      <tr className="currency-row">
         <td> {currency.rank} </td>
         <td>
           <Link to={path}> {currency.symbol} </Link>

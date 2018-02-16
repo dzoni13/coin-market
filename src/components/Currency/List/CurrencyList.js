@@ -35,7 +35,7 @@ class CurrencyList extends Component {
     const currencies = this.props.currencies.payload;
     if(currencies.length > 0) {
       return (
-        <div>
+        <div className="currencies">
           <Button
             onClick={this.getCurrenciesList}
             >Refresh

@@ -8,9 +8,11 @@ export function fetchDone(res) {
 }
 
 export function getCurrencies(params = {}) {
-  return async dispatch => {
-    const res = await currenciesService.getAll(params);
-    dispatch(fetchDone(res));
+  return dispatch => {
+    return currenciesService.getAll(params)
+      .then((json) => {
+        dispatch(fetchDone(json));
+      });
   };
 }
 

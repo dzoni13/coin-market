@@ -7,11 +7,16 @@ class CurrencyDetailsButtons extends Component {
     return (
       <ButtonToolbar>
         <Link to={'/'}>
-          <Button bsStyle="link"> Back to list </Button>
+          <Button
+            className="link"
+            bsStyle="link"
+            > Back to list
+          </Button>
         </Link>
         <Button
+          className="refresh"
           onClick={this.props.getCurrencyDetails}
-          >Refresh
+          > Refresh
         </Button>
       </ButtonToolbar>
     );

@@ -10,7 +10,7 @@ describe('Dashboard', () => {
     expect(dashboard).toMatchSnapshot();
   });
 
-  it('exist a Dashboard component', () => {
+  it('exist a CurrencyList component', () => {
     expect(dashboard.find(CurrencyList).exists()).toEqual(true);
   });
 });
