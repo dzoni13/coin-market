@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
-import { Link }             from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-class CurrencyTableRow extends Component {
+function CurrencyTableRow(props) {
+  const currency = this.props.currency;
+  const path = `/currency/${currency.id}`;
 
-  render() {
-    const currency = this.props.currency;
-    const path = `/currency/${currency.id}/?convert=${currency.fiatCurrency}`;
-
-    return (
-      <tr className="currency-row">
-        <td> {currency.rank} </td>
-        <td>
-          <Link to={path}> {currency.symbol} </Link>
-        </td>
-        <td> {currency.price} </td>
-        <td> {currency.percentChange24h} </td>
-      </tr>
-    )
-  }
+  return (
+    <tr className="currency-row">
+      <td> {currency.currencyName} </td>
+      <td> <Link to={path}>{currency.id} </Link> </td>
+      <td> {currency.currencySymbol} </td>
+    </tr>
+  )
 }
 
 export default CurrencyTableRow;

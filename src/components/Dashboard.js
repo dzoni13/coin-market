@@ -1,11 +1,9 @@
 import React from 'react';
-import CurrencyList from './Currency/List/CurrencyList';
+import CurrencyList from './Currency/List';
 
-const Dashboard = () => {
+function Dashboard(){
   return (
-    <div>
-      <CurrencyList />
-    </div>
+    <CurrencyList />
   );
 };
 

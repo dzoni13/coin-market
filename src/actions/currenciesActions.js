@@ -16,8 +16,18 @@ export function getCurrencies(params = {}) {
   };
 }
 
+export function convert(params) {
+  return dispatch => {
+    return currenciesService.convert(params)
+      .then((json) => {
+        return Object.values(json.data)[0]
+      });
+  };
+}
+
 const currenciesActions = {
-  getCurrencies
+  getCurrencies,
+  convert
 };
 
 export default currenciesActions;

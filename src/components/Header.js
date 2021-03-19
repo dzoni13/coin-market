@@ -1,17 +1,46 @@
-import React                           from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Navbar, Nav, NavItem, Badge } from 'react-bootstrap';
+import { bindActionCreators } from 'redux';
+import currenciesActions from '../actions/currenciesActions.js';
 
-const Header = () => (
-  <Navbar>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <Navbar.Link href="/"> Cryptocurrencies <Badge>100</Badge> </Navbar.Link>
-      </Navbar.Brand>
-    </Navbar.Header>
-    <Nav>
-      <NavItem href="/settings"> Settings </NavItem>
-    </Nav>
-  </Navbar>
-);
+class Header extends Component {
 
-export default Header;
+  componentDidMount = () => {
+    this.props.getCurrencies();
+  }
+
+  render() {
+    return (
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <Navbar.Link href="/"> Cryptocurrencies
+              {this.props.currencies.payload.length > 0 &&
+                <Badge>{this.props.currencies.payload.length}</Badge>
+              }
+            </Navbar.Link>
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Nav>
+          <NavItem href="/converter"> Converter </NavItem>
+        </Nav>
+      </Navbar>
+    )
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    currencies: state.currencies
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    getCurrencies: currenciesActions.getCurrencies
+  }, dispatch);
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

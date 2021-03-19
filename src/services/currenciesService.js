@@ -1,10 +1,17 @@
 import axios from 'axios';
+import config from '../config';
 
-let currenciesService = {
-  apiEndpoint: 'https://api.coinmarketcap.com/v1/ticker/',
+const currenciesService = {
+  apiEndpoint: config.API_ENDPOINT,
+  apiKey: config.API_KEY,
 
   getAll(params = {}) {
-    return axios.get(`${this.apiEndpoint}`, { params: params })
+    return axios.get(`${this.apiEndpoint}currencies?apiKey=${this.apiKey}`)
+      .then(res => res);
+  },
+
+  convert(value){
+    return axios.get(`${this.apiEndpoint}convert?q=${value}&compact=y&apiKey=${this.apiKey}`)
       .then(res => res);
   },
 

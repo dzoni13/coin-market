@@ -1,30 +1,24 @@
-import React, { Component }    from 'react';
-import { connect }             from 'react-redux';
-import DocumentTitle           from 'react-document-title';
-import { bindActionCreators }  from 'redux';
-import { Button, Table }       from 'react-bootstrap';
-import { reactLocalStorage }   from 'reactjs-localstorage';
-import currenciesActions       from '../../../actions/currenciesActions.js';
-import CurrencyTableRow        from './CurrencyTableRow';
-import ColumnsTitle            from './ColumnsTitle';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import DocumentTitle from 'react-document-title';
+import { bindActionCreators } from 'redux';
+import { Button, Table } from 'react-bootstrap';
+import currenciesActions from '../../../actions/currenciesActions.js';
+import CurrencyTableRow from './CurrencyTableRow';
+import ColumnsTitle from './ColumnsTitle';
 
 class CurrencyList extends Component {
 
   componentDidMount = () => {
-    this.getCurrenciesList();
+    this.props.getCurrencies();
   };
-
-  getCurrenciesList = () => {
-    const fiatCurrency = reactLocalStorage.get('fiatCurrency') !== 'undefined' ? reactLocalStorage.get('fiatCurrency') : this.props.fiatCurrency;
-    this.props.getCurrencies({ limit: 100, convert: fiatCurrency });
-  }
 
   renderRows = () => {
     const { currencies } = this.props;
-    return currencies.payload.map((item) => {
+    return currencies.payload.map((item, i) => {
       return (
         <CurrencyTableRow
-          key={item.id}
+          key={i}
           currency={item}
         />
       );
@@ -33,6 +27,7 @@ class CurrencyList extends Component {
 
   renderCurrencies() {
     const currencies = this.props.currencies.payload;
+
     if(currencies.length > 0) {
       return (
         <div className="currencies">
@@ -55,9 +50,7 @@ class CurrencyList extends Component {
   render() {
     return (
       <DocumentTitle title="Cryptocurrency: List">
-        <div>
           {this.renderCurrencies()}
-        </div>
       </DocumentTitle>
     );
   }
@@ -65,8 +58,7 @@ class CurrencyList extends Component {
 
 function mapStateToProps(state) {
   return {
-    currencies: state.currencies,
-    fiatCurrency: state.settings.fiatCurrency
+    currencies: state.currencies
   }
 }
 

@@ -1,14 +1,10 @@
 {
-  "name": "coin-market",
+  "name": "currency-market",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.17.1",
-    "axios-mock-adapter": "^1.13.1",
+    "axios": "^0.21.1",
     "bootstrap": "^3.3.7",
-    "enzyme": "^3.3.0",
-    "fetch-mock": "^6.0.0",
-    "jest-cli": "^20.0.4",
     "materialize-css": "^0.100.2",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
@@ -17,9 +13,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
-    "reactjs-localstorage": "0.0.6",
     "redux": "^3.7.2",
-    "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
@@ -30,16 +24,6 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
-  "devDependencies": {
-    "enzyme-adapter-react-16": "^1.1.1",
-    "react-test-renderer": "^16.2.0"
-  },
   "author": "",
-  "license": "ISC",
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "src/index.js"
-    ]
-  }
+  "license": "ISC"
 }
